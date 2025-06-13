@@ -1,0 +1,14 @@
+[Unit]
+Description=My Node.js App
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/node /root/smartSakuProd/backend/server.js
+Restart=always
+User=yourusername
+Environment=NODE_ENV=production
+WorkingDirectory=/path/to/your
+# Optional: limit open files, memory, etc.
+
+[Install]
+WantedBy=multi-user.target
