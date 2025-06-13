@@ -5,7 +5,7 @@ After=network.target
 [Service]
 ExecStart=/usr/bin/node /root/smartSakuProd/backend/server.js
 Restart=always
-User=yourusername
+User=root
 Environment=NODE_ENV=production
 WorkingDirectory=/path/to/your
 # Optional: limit open files, memory, etc.
