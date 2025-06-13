@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename);
 
 const server = Hapi.server({
   port: 80,
-  host: "localhost",
+  host: "0.0.0.0",
 });
 await server.register(Inert);
 server.route([
