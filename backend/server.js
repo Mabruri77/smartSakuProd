@@ -6,13 +6,18 @@ import transactionRoutes from "./routes/transactionRoute.js";
 import aiRoutes from "./routes/aiRoute.js";
 import path from "path";
 import { fileURLToPath } from "url";
+import fs from "fs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const server = Hapi.server({
-  port: 80,
+  port: 443,
   host: "0.0.0.0",
+  tls: {
+    key: fs.readFileSync("./key.pem"),
+    cert: fs.readFileSync("./cert.pem"),
+  },
   routes: {
     cors: {
       origin: ["*"],
